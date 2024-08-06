@@ -1,106 +1,131 @@
 <template>
-  <div>
-    <div class="header py-3 bg-gray-200">
-      <div class="header-bottom">
-        <div class="flex justify-center items-center">
-          <ul class="menu">
-            <li class="menu-item">
-              <NuxtLink class="menu-link" to="/">Home</NuxtLink>
+  <header class="header">
+    <div class="header-top">
+      <div class="container">
+        <div class="header-top-area">
+          <ul class="left-content">
+            <li>
+              <i class="las la-phone"></i>
+              <NuxtLink to="tel:012839"> +880 2483 03940 </NuxtLink>
             </li>
-            <li class="menu-item">
-              <NuxtLink class="menu-link" to="">Register</NuxtLink>
-            </li>
-            <li class="menu-item">
-              <NuxtLink class="menu-link" to="">Login</NuxtLink>
-            </li>
-            <li class="menu-item">
-              <NuxtLink class="menu-link" to="">Profile</NuxtLink>
+            <li>
+              <i class="las la-envelope-open"></i>
+              <NuxtLink to="mailto:msdmuntoa@gmail.com"> shohanuahman@gmail.com </NuxtLink>
             </li>
           </ul>
+          <div class="right-content">
+            <NuxtLink class="cancel-ticket" to="cancel-ticket.html">Cancel Ticket</NuxtLink>
+            <div>
+              <select class="langSel">
+                <option value="lang1">English</option>
+                <option value="lang2">Bangla</option>
+              </select>
+            </div>
+            <ul class="header-login">
+              <li>
+                <NuxtLink class="sign-in" to="sign-in.html"><i class="fas fa-sign-in-alt"></i>Sign In</NuxtLink>
+              </li>
+              <li>/</li>
+              <li>
+                <NuxtLink class="sign-up" to="sign-up.html"><i class="fas fa-user-plus"></i>Sign Up</NuxtLink>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+    <div class="header-bottom">
+      <div class="container">
+        <div class="header-bottom-area">
+          <div class="logo">
+            <NuxtLink to="./index.html">
+              <img src="/images/logo.png" alt="logo" />
+            </NuxtLink>
+          </div>
+
+          <ul class="menu">
+            <li>
+              <NuxtLink to="index.html">Home</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="about.html">About</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="#0">Booking</NuxtLink>
+              <ul class="sub-menu">
+                <li>
+                  <NuxtLink to="bus-ticket.html">Bus Ticket</NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="reserve.html">Reserve Bus</NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="cancel-ticket.html">Cancel Ticket</NuxtLink>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <NuxtLink to="faq.html">Faq</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="#0">Pages</NuxtLink>
+              <ul class="sub-menu">
+                <li>
+                  <NuxtLink to="user-dashboard.html">Dashboard</NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="sign-in.html">Sign In</NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="sign-up.html">Sign Up</NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="packages.html">Packages</NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="terms-condition.html">Terms & Conditions</NuxtLink>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <NuxtLink to="#0">Blog</NuxtLink>
+              <ul class="sub-menu">
+                <li>
+                  <NuxtLink to="blog.html">Blog</NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="blog-details.html">Blog Details</NuxtLink>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <NuxtLink to="contact.html">Contact</NuxtLink>
+            </li>
+          </ul>
+
+          <div class="d-flex">
+            <NuxtLink to="bus-ticket.html" class="cmn--btn btn--sm me-4 me-lg-0">Buy Tickets</NuxtLink>
+            <div class="header-trigger-wrapper d-flex d-lg-none">
+              <div class="header-trigger d-block d-lg-none">
+                <span></span>
+              </div>
+              <div class="top-bar-trigger">
+                <i class="las la-ellipsis-v"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 </template>
 
-<style lang="scss" scoped>
-@import "@/assets/_mixins.scss";
-@import "@/assets/_extend.scss";
-// Header Section Starts Here
-.router-link-exact-active {
-  color: hsl(var(--base));
-  font-weight: 500;
-}
-.header {
-  width: 100%;
-  @extend %transition;
-  z-index: 9999;
-}
-// Menu
-.menu {
-  @extend %flex;
-  align-items: center;
-  margin: 0;
-  position: relative;
-  > .has-submenu {
-    .menu-text {
-      padding-right: 20px !important;
-    }
-  }
-  .sub-menu {
-    .menu-item {
-      width: 100%;
-    }
-  }
-  .menu-item {
-    .menu-link {
-      font-family: var(--font-thin);
-      @include breakpoint(lg) {
-        font-family: var(--font-semibold);
-      }
-    }
-    &.has-submenu > .menu-link {
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      &::after {
-        @extend %font-ico;
-        content: "\f107";
-        right: 0;
-        top: 52%;
-        transform: translate(0, -50%);
-        font-size: 16px;
-      }
-    }
-  }
-}
+<script>
+export default {
+  // Your script code
+};
+</script>
 
-// Sub Menu (Desktop Menu)
-@include breakpoint(lg) {
-  .menu-item {
-    position: relative;
-    &:hover > .sub-menu {
-      visibility: visible;
-      opacity: 1;
-      transform: translate(0, 0);
-    }
-  }
-  .menu {
-    gap: 0 40px;
-  }
-  .menu > .menu-item > .menu-link {
-    padding: 12px 8px;
-    &.active {
-      color: hsl(var(--base));
-    }
-  }
-
-  .menu-item {
-    &:hover > .sub-menu {
-      visibility: visible;
-      opacity: 1;
-      transform: translate(0%, 0);
-    }
-  }
-}
+<style lang="scss">
+/* Your SASS/SCSS code */
 </style>

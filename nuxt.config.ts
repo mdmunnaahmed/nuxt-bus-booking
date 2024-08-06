@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
-        { rel: "stylesheet", href: "/css/vendor/bootstrap.min.css" },
+        { rel: "stylesheet", href: "/css/bootstrap.min.css" },
         { rel: "stylesheet", href: "/css/app.css" },
       ],
 
